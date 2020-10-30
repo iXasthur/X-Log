@@ -7,13 +7,14 @@ namespace X_Log.XLog
 {
     public class LogBuffer
     {
-        public readonly int AutoLogDelay;
-        public readonly int MaxQueueLength;
-        public readonly string LogFileName;
-        
         private readonly Timer _autoFlushTimer;
-        private readonly object _queueLock = new object();
         private readonly Queue<string> _queue = new Queue<string>();
+        private readonly object _queueLock = new object();
+
+        public readonly int AutoLogDelay;
+        public readonly string LogFileName;
+        public readonly int MaxQueueLength;
+
         private int _flushing;
 
         public LogBuffer(int maxQueueLength, int autoLogDelay)

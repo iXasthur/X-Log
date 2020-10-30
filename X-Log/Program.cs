@@ -1,5 +1,6 @@
-﻿using System.Threading;
+﻿using System.Collections.Generic;
 using X_Log.XLog;
+using X_Log.XParallel;
 
 namespace X_Log
 {
@@ -7,12 +8,9 @@ namespace X_Log
     {
         private static void Main(string[] args)
         {
-            var logBuffer = new LogBuffer(20, 2000);
-            logBuffer.Add("1");
-            logBuffer.Add("2");
-            Thread.Sleep(10000);
-            logBuffer.Add("3");
-            logBuffer.Flush();
+            var logger = new LogBuffer(20, 10000);
+            var delegates = new List<Parallel.TaskDelegate>();
+            Parallel.WaitAll(delegates);
         }
     }
 }
