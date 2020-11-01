@@ -25,6 +25,10 @@ namespace X_Log.XLog
             AutoLogDelay = autoLogDelay;
             LogFileName = "xlog-" + now.Day + "-" + now.Month + "-" + now.Year + ".txt";
             _autoFlushTimer = new Timer(obj => Flush(), null, AutoLogDelay, AutoLogDelay);
+
+            Add("Created " + nameof(LogBuffer) + " (" + nameof(MaxQueueLength) + ": " + MaxQueueLength + ", " +
+                nameof(AutoLogDelay) + ": " + AutoLogDelay + ")");
+            Flush();
         }
 
         public async void Flush()
