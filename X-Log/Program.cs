@@ -13,7 +13,7 @@ namespace X_Log
             Parallel.Logger = logger;
 
             var tasks = new List<FibonacciTask>();
-            for (uint i = 5; i <= 200; i += 5)
+            for (uint i = 5; i <= 500; i += 5)
             {
                 var task = new FibonacciTask(i);
                 tasks.Add(task);
