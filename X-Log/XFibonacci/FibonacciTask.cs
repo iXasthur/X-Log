@@ -1,9 +1,11 @@
-﻿namespace X_Log.XFibonacci
+﻿using System.Numerics;
+
+namespace X_Log.XFibonacci
 {
     public class FibonacciTask
     {
         public readonly uint N;
-        public uint? Result;
+        public BigInteger? Result;
 
         public FibonacciTask(uint n)
         {

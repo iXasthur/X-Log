@@ -1,12 +1,21 @@
-﻿namespace X_Log.XFibonacci
+﻿using System.Numerics;
+
+namespace X_Log.XFibonacci
 {
     public class Fibonacci
     {
-        public static uint Calculate(uint n)
+        public static BigInteger Calculate(uint n)
         {
             if (n <= 1) return n;
 
-            return Calculate(n - 1) + Calculate(n - 2);
+            BigInteger a = 0;
+            BigInteger b = 1;
+            while (n-- > 1) {
+                BigInteger t = a;
+                a = b;
+                b += t;
+            }
+            return b;
         }
     }
 }
