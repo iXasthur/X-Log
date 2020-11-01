@@ -10,11 +10,13 @@ namespace X_Log.XFibonacci
 
             BigInteger a = 0;
             BigInteger b = 1;
-            while (n-- > 1) {
-                BigInteger t = a;
+            while (n-- > 1)
+            {
+                var t = a;
                 a = b;
                 b += t;
             }
+
             return b;
         }
     }
